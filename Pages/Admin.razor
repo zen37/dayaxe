@@ -2,10 +2,20 @@
 
 <h3>Admin</h3>
 
+<style>
+    .active-tab {
+        background-color: lightgreen;
+    }
+
+    .nav-tabs > li > a {
+        margin-right: 50px;
+    }
+</style>
+
 <div class="container">
     <ul class="nav nav-tabs">
-        <li class="@((ActiveTab == "Tab1") ? "active" : "")"><a @onclick='() => SetActiveTab("Tab1")'>Tab 1</a></li>
-        <li class="@((ActiveTab == "Tab2") ? "active" : "")"><a @onclick='() => SetActiveTab("Tab2")'>Tab 2</a></li>
+        <li class="@((ActiveTab == "Tab1") ? "active-tab" : "")"><a @onclick='() => SetActiveTab("Tab1")'>Eligible Domains</a></li>
+        <li class="@((ActiveTab == "Tab2") ? "active-tab" : "")"><a @onclick='() => SetActiveTab("Tab2")'>Eligible Emails</a></li>
     </ul>
 
     <div class="tab-content">
