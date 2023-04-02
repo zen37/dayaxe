@@ -1,10 +1,9 @@
 ﻿@page "/admin"
 
-<h3>Admin</h3>
 
 <style>
     .active-tab {
-        background-color: lightgreen;
+        background-color: lightblue;
     }
 
     .nav-tabs > li > a {
@@ -20,10 +19,85 @@
 
     <div class="tab-content">
         <div class="tab-pane @((ActiveTab == "Tab1") ? "active" : "")" id="tab1">
-            Content for Tab 1 goes here.
+            <br />
+            <button class="btn btn-success mb-3" @onclick="AddEligibleDomain">Add Eligible Domain</button>
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>Domain</th>
+                        <th>Email</th>
+                        <th>Name</th>
+                        <th>Contact</th>
+                        <th>Date Registered</th>
+                        <th>Date Last Login</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>marriott.com</td>
+                        <td>user1@marriott.com</td>
+                        <td>Jane Doe</td>
+                        <td>555-250-7777</td>
+                        <td>01/01/2023</td>
+                        <td>01/15/2023</td>
+                    </tr>
+                    <tr>
+                        <td>marriott.com</td>
+                        <td>user2@marriott.com</td>
+                        <td>John Doe</td>
+                        <td>555-120-7777</td>
+                        <td>02/01/2023</td>
+                        <td>02/01/2023</td>
+                    </tr>
+                    <tr>
+                        <td>fairmont.com</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>hilton.com</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                </tbody>
+            </table>
         </div>
         <div class="tab-pane @((ActiveTab == "Tab2") ? "active" : "")" id="tab2">
-            Content for Tab 2 goes here.
+            <br />
+            <button class="btn btn-success mb-3" @onclick="AddEligibleDomain">Add Eligible Emails</button>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Email</th>
+                        <th>Name</th>
+                        <th>Contact</th>
+                        <th>Date Registered</th>
+                        <th>Date Last Login</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>jane@gmail.com</td>
+                        <td>Jane Doe</td>
+                        <td>555-000-7777</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>john@marriott.com</td>
+                        <td>John Doe</td>
+                        <td>555-100-7777</td>
+                        <td>01/01/2023</td>
+                        <td>02/01/2023</td>
+                    </tr>
+                </tbody>
+            </table>
         </div>
     </div>
 </div>
@@ -34,5 +108,10 @@
     private void SetActiveTab(string tabName)
     {
         ActiveTab = tabName;
+    }
+
+    private void AddEligibleDomain()
+    {
+        // Code to add a new eligible domain goes here
     }
 }
